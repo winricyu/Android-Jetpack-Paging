@@ -13,5 +13,5 @@ fun Fragment.logd(text: String) {
 }
 
 private inline fun <reified E> logd(instance: E, text: String) {
-    Log.d(E::class.simpleName, text)
+    Log.d(instance.toString(), text)
 }

@@ -3,11 +3,10 @@ package `fun`.dooit.paging.view
 import `fun`.dooit.paging.R
 import `fun`.dooit.paging.logd
 import `fun`.dooit.paging.net.MarvelService
-import `fun`.dooit.paging.net.YoloService
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
