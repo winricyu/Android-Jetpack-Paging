@@ -1,5 +1,7 @@
 package `fun`.dooit.paging.model
 
+import androidx.paging.PagedList
+
 data class Hero(
     val code: Int,
     val status: String,
@@ -15,7 +17,7 @@ data class Hero(
         val limit: Int,
         val total: Int,
         val count: Int,
-        val results: List<Result>
+        val results: PagedList<Result>
     ) {
 
         data class Result(

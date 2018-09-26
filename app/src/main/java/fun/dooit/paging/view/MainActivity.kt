@@ -1,12 +1,14 @@
 package `fun`.dooit.paging.view
 
 import `fun`.dooit.paging.R
+import `fun`.dooit.paging.databinding.ActivityMainBinding
 import `fun`.dooit.paging.logd
 import `fun`.dooit.paging.net.MarvelService
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -15,17 +17,13 @@ import io.reactivex.schedulers.Schedulers
 class MainActivity : AppCompatActivity() {
 
     var disposable: Disposable? = null
-    var recyclerView:RecyclerView?=null
+    lateinit var binding: ActivityMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val edtInput: EditText? = findViewById(R.id.edt_input)
-        findViewById<Button>(R.id.btn_search).setOnClickListener { view -> startSearch(edtInput?.text?.trim().toString()) }
-
-        recyclerView=findViewById(R.id.recyclerview)
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.edtInput.setOnClickListener { startSearch(binding.edtInput.text.trim().toString()) }
 
     }
 
