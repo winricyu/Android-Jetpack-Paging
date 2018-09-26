@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -14,6 +15,7 @@ import io.reactivex.schedulers.Schedulers
 class MainActivity : AppCompatActivity() {
 
     var disposable: Disposable? = null
+    var recyclerView:RecyclerView?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val edtInput: EditText? = findViewById(R.id.edt_input)
         findViewById<Button>(R.id.btn_search).setOnClickListener { view -> startSearch(edtInput?.text?.trim().toString()) }
+
+        recyclerView=findViewById(R.id.recyclerview)
 
 
     }
