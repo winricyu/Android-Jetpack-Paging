@@ -6,6 +6,10 @@
         <variable
             name="hero"
             type="fun.dooit.paging.model.Hero" />
+
+        <variable
+            name="viewModel"
+            type="fun.dooit.paging.viewmodel.ActivityMainVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -37,6 +41,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
+            android:onClick="@{viewModel::onClickSearch}"
             android:text="@{hero.copyright}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -51,7 +56,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_input" />
+            app:layout_constraintTop_toBottomOf="@+id/edt_input"
+            tools:listitem="@layout/item_hero_info" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
